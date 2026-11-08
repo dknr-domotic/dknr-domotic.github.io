@@ -4,6 +4,9 @@
 
 [Dépôt GitHub](https://github.com/dknr-domotic/dknr-alexa){ .md-button }
 
+!!! warning "Virtual Smart Home est un service par abonnement"
+    dknr-alexa s'appuie sur le service Virtual Smart Home, qui relie Node-RED à Alexa par son propre serveur. Ce service est **payant, par abonnement** : la formule PRO, nécessaire ici, permet jusqu'à 200 appareils et la lecture de leur état par Alexa. Sans abonnement actif, la connexion à Alexa ne fonctionne pas. Voir les conditions sur le [site de VSH](https://github.com/csuermann/node-red-contrib-virtual-smart-home).
+
 
 ## Fonctionnalités
 
@@ -18,7 +21,7 @@
 
 - Le serveur MQTT et au moins une source DKNR.
 - Un compte Amazon avec des appareils Echo.
-- Un abonnement Virtual Smart Home (formule PRO : 200 appareils).
+- Un **abonnement payant** Virtual Smart Home, formule PRO (200 appareils).
 - Un accès sortant à internet pour le conteneur.
 
 
