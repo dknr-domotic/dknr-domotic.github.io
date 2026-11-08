@@ -1,0 +1,87 @@
+site_name: DKNR Domotic
+site_url: https://dknr-domotic.github.io/
+site_description: Domotique locale avec Node-RED, MQTT et Docker, sans cloud.
+site_author: DKNR Domotic
+repo_url: https://github.com/dknr-domotic/dknr-domotic
+repo_name: dknr-domotic
+edit_uri: https://github.com/dknr-domotic/dknr-domotic.github.io/edit/master/docs/
+copyright: Projets open-source DKNR Domotic
+
+theme:
+  name: material
+  language: fr
+  icon:
+    logo: material/home-automation
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Mode clair
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Accueil: index.md
+  - Bien démarrer:
+      - demarrer/index.md
+      - Installation: demarrer/installation.md
+      - Serveur MQTT: demarrer/serveur-mqtt.md
+      - Le format DKNR: demarrer/format-dknr.md
+  - DKNR Domotic:
+      - domotic/index.md
+      - Configuration: domotic/configuration.md
+      - Scènes: domotic/scenes.md
+      - Modes de la maison: domotic/modes.md
+      - Utilisateurs: domotic/utilisateurs.md
+  - Sources:
+      - sources/index.md
+      - Zigbee: sources/zigbee.md
+      - Z-Wave: sources/zwave.md
+      - RFXCom: sources/rfxcom.md
+      - Teleinfo: sources/teleinfo.md
+      - Nuki: sources/nuki.md
+      - Daikin: sources/daikin.md
+      - Zendure: sources/zendure.md
+      - APSystems: sources/apsystems.md
+  - Intégrations:
+      - Alexa: integrations/alexa.md
+  - Contribuer: contribuer.md
