@@ -1,0 +1,30 @@
+/* DKNR colors, from the DKNR logo (dknr-logo.svg) */
+:root {
+  --dknr-blue: #137bbb;
+  --dknr-blue-light: #a2cbe9;
+  --dknr-green: #9ac123;
+}
+
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: var(--dknr-blue);
+  --md-primary-fg-color--light: var(--dknr-blue-light);
+  --md-primary-fg-color--dark: #0e5f91;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #ffffffb3;
+}
+
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color: #7fa31a;
+  --md-accent-fg-color--transparent: #9ac1231a;
+  --md-accent-bg-color: #ffffff;
+  --md-accent-bg-color--light: #ffffffb3;
+}
+
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  --md-primary-fg-color: #4aa3dc;
+  --md-typeset-a-color: var(--dknr-blue-light);
+}
+
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  --md-accent-fg-color: var(--dknr-green);
+}
