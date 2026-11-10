@@ -4,6 +4,8 @@
 
 [Dépôt GitHub](https://github.com/dknr-domotic/dknr-zendure){ .md-button }
 
+![Tableau de bord dknr-zendure](https://raw.githubusercontent.com/dknr-domotic/dknr-zendure/master/sshot/dknr-zendure_screenshot.png)
+
 
 ## Fonctionnalités
 

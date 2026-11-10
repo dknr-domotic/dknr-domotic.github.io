@@ -4,7 +4,7 @@
 
 [Dépôt GitHub](https://github.com/dknr-domotic/dknr-apsystems){ .md-button }
 
-![Tableau de bord dknr-apsystems](https://raw.githubusercontent.com/dknr-domotic/dknr-apsystems/master/dknr-apsystems_screenshot.png)
+![Tableau de bord dknr-apsystems](https://raw.githubusercontent.com/dknr-domotic/dknr-apsystems/master/sshot/dknr-apsystems_screenshot.png)
 
 
 ## Fonctionnalités
