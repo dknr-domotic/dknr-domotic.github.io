@@ -4,6 +4,8 @@
 
 [Dépôt GitHub](https://github.com/dknr-domotic/dknr-teleinfo){ .md-button }
 
+![Tableau de bord dknr-teleinfo](https://raw.githubusercontent.com/dknr-domotic/dknr-teleinfo/master/sshot/dknr-teleinfo_screenshot.png)
+
 
 ## Fonctionnalités
 
