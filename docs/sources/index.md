@@ -12,6 +12,7 @@ Une **source** est un projet DKNR qui parle à un type d'appareil et publie ses 
 | [Daikin](daikin.md) | Pompes à chaleur | API locale du module Wifi | oui | oui |
 | [Zendure](zendure.md) | Onduleurs et batteries | API MQTT Zendure | non | oui |
 | [APSystems](apsystems.md) | Onduleurs solaires | API locale de l'ECU | non | oui |
+| [Verisure](verisure.md) | Alarme Verisure France | Cloud Verisure (API de l'application) | oui | oui |
 
 
 ## Ce qui est commun à toutes les sources

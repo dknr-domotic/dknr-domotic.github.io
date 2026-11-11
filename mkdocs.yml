@@ -85,6 +85,7 @@ nav:
       - Daikin: sources/daikin.md
       - Zendure: sources/zendure.md
       - APSystems: sources/apsystems.md
+      - Verisure: sources/verisure.md
   - Intégrations:
       - Alexa: integrations/alexa.md
   - Contribuer: contribuer.md

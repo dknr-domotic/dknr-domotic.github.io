@@ -9,7 +9,7 @@ Chaque valeur est identifiée par trois niveaux :
 
 | Niveau | Exemple | Ce que c'est |
 | --- | --- | --- |
-| **source** | `zigbee` | Le projet qui publie : `zigbee`, `zwave`, `rfxcom`, `teleinfo`, `nuki`, `daikin`, `zendure`, `apsystems`, et `dknr` pour DKNR Domotic lui-même. |
+| **source** | `zigbee` | Le projet qui publie : `zigbee`, `zwave`, `rfxcom`, `teleinfo`, `nuki`, `daikin`, `zendure`, `apsystems`, `verisure`, et `dknr` pour DKNR Domotic lui-même. |
 | **appareil** (parent) | `00158d0001a2b3c4` | L'appareil dans la source, avec un identifiant stable : adresse IEEE Zigbee, numéro de nœud Z-Wave, identifiant radio... Renommer l'appareil ne le change pas. |
 | **entité** | `temperature` | Une valeur de l'appareil : une température, un état, une position, une consigne... |
 

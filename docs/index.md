@@ -23,14 +23,14 @@ flowchart LR
         W[Contrôleur Z-Wave]
         R[RFXtrx 433 MHz]
         T[Compteur Linky]
-        A[PAC, onduleurs, serrures]
+        A[PAC, onduleurs, serrures, alarme]
     end
     subgraph Sources DKNR
         SZ[dknr-zigbee]
         SW[dknr-zwave]
         SR[dknr-rfxcom]
         ST[dknr-teleinfo]
-        SA[dknr-daikin, dknr-nuki,<br/>dknr-zendure, dknr-apsystems]
+        SA[dknr-daikin, dknr-nuki,<br/>dknr-zendure, dknr-apsystems,<br/>dknr-verisure]
     end
     M[(Serveur MQTT<br/>topic dknr)]
     D[DKNR Domotic<br/>tableau de bord, scènes]
@@ -55,7 +55,7 @@ flowchart LR
 
 ## Les principes
 
-- **Local d'abord** : aucun projet ne dépend du cloud d'un fabricant (sauf Zendure, dont l'API passe par son serveur MQTT). Tout continue de fonctionner sans internet.
+- **Local d'abord** : aucun projet ne dépend du cloud d'un fabricant (sauf Zendure, dont l'API passe par son serveur MQTT, et Verisure, qui n'offre aucun accès local). Tout continue de fonctionner sans internet.
 - **Un projet par technologie** : chaque source est un conteneur Docker indépendant. Vous n'installez que ce dont vous avez besoin, et une panne reste isolée.
 - **Un format commun** : toutes les sources publient de la même façon. Un binaire vaut toujours `1` ou `0`, une liste publie toujours la clé de l'option.
 - **Node-RED partout** : chaque projet est un flow Node-RED en mode projet, avec son propre tableau de bord et un éditeur pour les curieux.
@@ -74,6 +74,7 @@ flowchart LR
 | [dknr-daikin](sources/daikin.md) | Pompes à chaleur Daikin, par l'API locale |
 | [dknr-zendure](sources/zendure.md) | Onduleurs et batteries Zendure |
 | [dknr-apsystems](sources/apsystems.md) | Onduleurs solaires APSystems, par l'API locale de l'ECU |
+| [dknr-verisure](sources/verisure.md) | Alarme Verisure France, par le cloud Verisure |
 | [dknr-alexa](integrations/alexa.md) | Partage des entités vers et depuis Amazon Alexa |
 
 Les images Docker sont publiées sur [Docker Hub](https://hub.docker.com/u/jcpd) et dans les [packages de l'organisation](https://github.com/orgs/dknr-domotic/packages), pour les architectures amd64 et arm64 (Raspberry Pi compris).
