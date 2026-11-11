@@ -27,6 +27,8 @@ Avec la racine `dknr` (réglable dans chaque projet, à garder identique partout
 | `dknr/discovery/<source>/<appareil>/<entité>` | source → | Description de l'entité (voir ci-dessous). |
 | `dknr/get/<source>/<appareil>/<entité>` | source → | La valeur, publiée à chaque changement. |
 | `dknr/set/<source>/<appareil>/<entité>` | → source | Une commande : la valeur voulue. |
+| `dknr/room/<source>/<appareil>/<entité>` | DKNR Domotic → | L'identifiant de la pièce de l'entité. |
+| `dknr/data/<type>/<id>/<champ>` | DKNR Domotic → | Des données qui ne sont pas des entités, comme les pièces. |
 
 Description d'une entité (discovery) :
 
@@ -43,6 +45,32 @@ Description d'une entité (discovery) :
 
 - `type` vaut `binary`, `number`, `enum` (liste de choix) ou `text`.
 - `options` donne, pour une liste, la correspondance entre la clé publiée et son libellé (traduit selon la langue choisie dans la configuration de la source).
+
+
+## Les pièces
+
+Seul DKNR Domotic range les entités par pièce. Il publie ce rangement pour que les autres projets puissent s'en servir, par exemple pour nommer ou regrouper les appareils :
+
+| Topic | Valeur |
+| --- | --- |
+| `dknr/room/<source>/<appareil>/<entité>` | Identifiant de la pièce de l'entité. |
+| `dknr/data/room/<id>/name` | Nom de la pièce. |
+| `dknr/data/room/<id>/outdoor` | `1` si la pièce est extérieure, sinon `0`. |
+
+- Ces topics sont **retenus** : un projet qui démarre reçoit tout de suite les pièces.
+- Un message **vide** efface le topic : l'entité n'a plus de pièce, ou la pièce a été supprimée.
+- Ils sont en **lecture seule** : on ne change une pièce que dans DKNR Domotic.
+- Les pièces `home` et `system` existent toujours dans DKNR Domotic.
+- Un identifiant de pièce ne contient que des lettres minuscules, des chiffres et `_`.
+
+Les branches sous la racine (`discovery`, `get`, `set`, `room`) suivent toutes le chemin `<source>/<appareil>/<entité>`. La branche `data` contient le reste, sur le modèle `dknr/data/<type>/<id>/<champ>`, une valeur simple par topic.
+
+Lire la pièce de toutes les entités Zigbee, puis le nom des pièces :
+
+```bash
+mosquitto_sub -h 192.168.0.11 -u dknr -P mot-de-passe -t 'dknr/room/zigbee/#' -v
+mosquitto_sub -h 192.168.0.11 -u dknr -P mot-de-passe -t 'dknr/data/room/+/name' -v
+```
 
 
 ## Les conventions

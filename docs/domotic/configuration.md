@@ -15,7 +15,7 @@ Dès la connexion, DKNR Domotic lit la discovery de toutes les sources : sources
 
 ## 2. Les pièces
 
-1. Dans **Configuration > Pièces**, créez vos pièces. Cochez **Extérieur** pour les pièces dont les sondes donnent la température extérieure (jardin, terrasse) : le thermostat des scènes s'en sert.
+1. Dans **Configuration > Pièces**, créez vos pièces. L'**identifiant** ne contient que des lettres minuscules, des chiffres et `_` (ex : `salle_de_bain`) : il sert dans les topics MQTT et ne change plus ensuite. Le **nom** accepte les lettres accentuées, les chiffres, les espaces et `- ' . ( )`, et se modifie depuis la page de la pièce. Cochez **Extérieur** pour les pièces dont les sondes donnent la température extérieure (jardin, terrasse) : le thermostat des scènes s'en sert.
 2. Dans la page **Pièces**, menu de la pièce :
     - **Plan** : envoyez une image du plan de la maison, puis placez chaque pièce dessus (**Emplacement**).
     - **Caméra** : l'adresse du flux d'une caméra, affiché dans la pièce.
