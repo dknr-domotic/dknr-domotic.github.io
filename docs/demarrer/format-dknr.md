@@ -61,6 +61,7 @@ Seul DKNR Domotic range les entités par pièce. Il publie ce rangement pour que
 - Un message **vide** efface le topic : l'entité n'a plus de pièce, ou la pièce a été supprimée.
 - Ils sont en **lecture seule** : on ne change une pièce que dans DKNR Domotic.
 - Les pièces `home` et `system` existent toujours dans DKNR Domotic.
+- Un identifiant de pièce ne contient que des lettres minuscules, des chiffres et `_`.
 
 Les branches sous la racine (`discovery`, `get`, `set`, `room`) suivent toutes le chemin `<source>/<appareil>/<entité>`. La branche `data` contient le reste, sur le modèle `dknr/data/<type>/<id>/<champ>`, une valeur simple par topic.
 
