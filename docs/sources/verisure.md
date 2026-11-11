@@ -46,6 +46,8 @@ Dans la page **Alarme**, les boutons **Désarmer**, **Jour**, **Nuit** et **Tota
 - Passer d'un mode armé à un autre **désarme puis réarme** l'alarme.
 - Si une porte ou une fenêtre est ouverte, Verisure refuse l'armement et la zone est indiquée. L'armement forcé n'est pas géré.
 
+Comme la source dépend du cloud, l'entité **`fault`** passe à `1` dès que le compte n'est plus connecté ou que l'alarme ne répond plus depuis un moment : servez-vous-en comme alerte.
+
 !!! danger "Désarmement par MQTT"
     Par défaut, MQTT peut **armer mais pas désarmer** : tout appareil capable de publier sur votre serveur MQTT pourrait sinon couper l'alarme. Pour l'autoriser, cochez **Autoriser le désarmement par MQTT** dans la page **Configurer**. Sans cette option, un changement de mode d'une alarme déjà armée est aussi refusé par MQTT.
 
@@ -69,6 +71,7 @@ L'identifiant d'un appareil est le numéro de l'installation Verisure.
 
 | Entité | Valeur |
 | --- | --- |
+| `fault` | `1` en défaut : compte non connecté, ou aucune lecture valide depuis 3 intervalles de lecture (10 minutes au minimum). `0` sinon. |
 | `mode` | Mode de l'alarme intérieure, en lecture et en commande : `D` désarmée, `P` partielle jour, `Q` partielle nuit, `T` totale. |
 | `state` | État complet : les valeurs de `mode`, plus `E`, `B`, `C`, `A` (avec périmétrique) et `X`, `R`, `S`, `O` (avec annexe). |
 | `armed` | `1` si l'alarme est armée, quel que soit le mode. |
