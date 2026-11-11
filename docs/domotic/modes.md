@@ -19,6 +19,12 @@ Chaque mode a deux entités :
 
 Les modes disponibles : `nycthemer` (jour / nuit), `light` (lumières), `shutter` (volets), `waterboiler` (chauffe-eau), `sound` (son).
 
+En `auto` :
+
+- `nycthemer` est le jour entre l'heure limite du matin et celle du soir, sans être avant le lever ni après le coucher du soleil (capteurs `morning_limit` et `evening_limit`) ;
+- `light` est `high` entre l'heure limite du matin (`dknr/command/workday_morning_limit`) et celle du soir (`dknr/command/workday_evening_limit`), sans tenir compte du soleil : la lumière reste vive au réveil avant le lever du jour. Si des heures de confort sont réglées pour la pièce `home`, ce sont elles qui comptent ;
+- `sound` et `shutter` suivent `nycthemer`, et `waterboiler` en prend l'inverse.
+
 D'autres entités `dknr` donnent l'état général de la maison : l'automatisme général (`automate`), le mode thermique (chauffage, refroidissement, hors gel, arrêt), l'humidité, le lever et le coucher du soleil, la puissance de la maison...
 
 
